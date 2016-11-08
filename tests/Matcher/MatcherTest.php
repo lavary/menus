@@ -46,7 +46,7 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
 
     public function testIsCurrentWithoutPatterns()
     {
-        $item = $this->getMock(Item::class)
+        $item = $this->getMockBuilder(Item::class)
                      ->disableOriginalConstructor()
                      ->getMock();
     
@@ -57,7 +57,7 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
 
     public function testIsCurrentWithPatternsSuccess()
     {
-        $item = $this->getMock(Item::class)
+        $item = $this->getMockBuilder(Item::class)
                      ->disableOriginalConstructor()
                      ->getMock();
         
@@ -76,7 +76,7 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
 
     public function testIsCurrentWithPatternFail()
     {
-        $item = $this->getMock(Item::class)
+        $item = $this->getMockBuilder(Item::class)
                      ->disableOriginalConstructor()
                      ->getMock();
         

@@ -61,7 +61,7 @@ class ElementTest extends \PHPUnit_Framework_TestCase
         
         $link->expects($this->any())->method('attr')->will($this->returnValue([]));
 
-        $item = $this->getMock(\Lavary\Menu\Item::class)
+        $item = $this->getMockBuilder(\Lavary\Menu\Item::class)
                      ->disableOriginalConstructor()
                      ->getMock();
        
@@ -78,7 +78,7 @@ class ElementTest extends \PHPUnit_Framework_TestCase
 
     public function testAddTagTextWithRaws()
     {
-        $item = $this->getMock(\Lavary\Menu\Item::class)
+        $item = $this->getMockBuilder(\Lavary\Menu\Item::class)
                      ->disableOriginalConstructor()
                      ->getMock();
         

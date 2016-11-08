@@ -61,7 +61,10 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
 
     public function testGroup()
     {
-        $item = $this->getMock(\Lavary\Menu\Item::class);
+        $item = $this->getMockBuilder(\Lavary\Menu\Item::class)
+                     ->disableOriginalConstructor()
+                     ->getMock();
+                     
         $this->manager->group(['prefix' => 'foo/bar',    'class' => 'test-class', 'data-role' => 'item'], function () use ($item) {
              $this->manager->group(['prefix' => 'test/prefix', 'class' => 'another-test-class'], function () {
                 $this->assertEquals('foo/bar/test/prefix', $this->manager->getLastGroupPrefix());
