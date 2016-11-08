@@ -1,0 +1,9 @@
+# Menu Configuration Settings
+menu:
+  cascade_data: true
+  auto_activate: true
+  current_affect_parents: true
+  active_attributes: 
+      class: active
+      data_role: menu
+  active_element: item    # item|link
