@@ -10,7 +10,7 @@ class Helpers
      * @param  mixed  $value
      * @return mixed
      */
-    public function value($value)
+    public static function value($value)
     {
         return $value instanceof Closure ? $value() : $value;
     }
