@@ -23,7 +23,8 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
 
     public function testAddPattern()
     {
-        $pattern = $this->getMock('\Lavary\Menu\Matcher\Pattern\PatternInterface');
+        $pattern = $this->getMockBuilder('\Lavary\Menu\Matcher\Pattern\PatternInterface')
+                        ->getMock();
 
         $this->matcher->addPattern($pattern);
         $this->matcher->addPattern($pattern);
@@ -62,8 +63,8 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
                      ->getMock();
         
         $patterns = [
-            $this->getMock('\Lavary\Menu\Matcher\Pattern\PatternInterface'),
-            $this->getMock('\Lavary\Menu\Matcher\Pattern\PatternInterface'),
+            $this->getMockBuilder('\Lavary\Menu\Matcher\Pattern\PatternInterface')->getMock(),
+            $this->getMockBuilder('\Lavary\Menu\Matcher\Pattern\PatternInterface')->getMock(),
         ];
         
         $patterns[0]->method('match')->will($this->returnValue(true));
@@ -81,8 +82,8 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
                      ->getMock();
         
         $patterns = [
-            $this->getMock('\Lavary\Menu\Matcher\Pattern\PatternInterface'),
-            $this->getMock('\Lavary\Menu\Matcher\Pattern\PatternInterface'),
+            $this->getMockBuilder('\Lavary\Menu\Matcher\Pattern\PatternInterface')->getMock(),
+            $this->getMockBuilder('\Lavary\Menu\Matcher\Pattern\PatternInterface')->getMock(),
         ];
 
          $this->matcher->addPattern($patterns[0])

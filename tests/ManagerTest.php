@@ -15,8 +15,8 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $configuration = $this->getMock('\Lavary\Menu\Configuration\Configuration', ['get']);
-        $matcher       = $this->getMock('\Lavary\Menu\Matcher\Matcher');
+        $configuration = $this->getMockBuilder('\Lavary\Menu\Configuration\Configuration', ['get'])->getMock();
+        $matcher       = $this->getMockBuilder('\Lavary\Menu\Matcher\Matcher')->getMock();
 
         $configuration->expects($this->any())
                       ->method('get')
