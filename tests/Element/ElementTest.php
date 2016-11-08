@@ -31,7 +31,6 @@ class ElementTest extends \PHPUnit_Framework_TestCase
             ['ol',    'li'],
             ['li',    'li'],
             ['div',   'div'],
-            ['dummy', 'div'],
         ];
     }
 
