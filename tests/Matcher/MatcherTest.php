@@ -23,7 +23,7 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
 
     public function testAddPattern()
     {
-        $pattern = $this->getMock('Lavary\Menu\Matcher\Pattern\PatternInterface');
+        $pattern = $this->getMock('\Lavary\Menu\Matcher\Pattern\PatternInterface');
 
         $this->matcher->addPattern($pattern);
         $this->matcher->addPattern($pattern);
@@ -31,7 +31,7 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
 
         $patterns = $this->matcher->getPatterns();
         $this->assertCount(3, $patterns);
-        $this->assertContainsOnlyInstancesOf('Lavary\Menu\Matcher\Pattern\PatternInterface', $patterns);
+        $this->assertContainsOnlyInstancesOf('\Lavary\Menu\Matcher\Pattern\PatternInterface', $patterns);
     }
 
     public function testAddRegex()
@@ -41,12 +41,12 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
 
         $patterns = $this->matcher->getPatterns();
         $this->assertCount(2, $patterns);
-        $this->assertContainsOnlyInstancesOf('Lavary\Menu\Matcher\Pattern\RegexPattern', $patterns);
+        $this->assertContainsOnlyInstancesOf('\Lavary\Menu\Matcher\Pattern\RegexPattern', $patterns);
     }
 
     public function testIsCurrentWithoutPatterns()
     {
-        $item = $this->getMockBuilder('Item')
+        $item = $this->getMockBuilder('\Lavary\Menu\Item')
                      ->disableOriginalConstructor()
                      ->getMock();
     
@@ -57,13 +57,13 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
 
     public function testIsCurrentWithPatternsSuccess()
     {
-        $item = $this->getMockBuilder('Lavary\Menu\Item')
+        $item = $this->getMockBuilder('\Lavary\Menu\Item')
                      ->disableOriginalConstructor()
                      ->getMock();
         
         $patterns = [
-            $this->getMock('PatternInterface'),
-            $this->getMock('PatternInterface'),
+            $this->getMock('\Lavary\Menu\Matcher\Pattern\PatternInterface'),
+            $this->getMock('\Lavary\Menu\Matcher\Pattern\PatternInterface'),
         ];
         
         $patterns[0]->method('match')->will($this->returnValue(true));
@@ -76,13 +76,13 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
 
     public function testIsCurrentWithPatternFail()
     {
-        $item = $this->getMockBuilder('Item')
+        $item = $this->getMockBuilder('\Lavary\Menu\Item')
                      ->disableOriginalConstructor()
                      ->getMock();
         
         $patterns = [
-            $this->getMock('PatternInterface'),
-            $this->getMock('PatternInterface'),
+            $this->getMock('\Lavary\Menu\Matcher\Pattern\PatternInterface'),
+            $this->getMock('\Lavary\Menu\Matcher\Pattern\PatternInterface'),
         ];
 
          $this->matcher->addPattern($patterns[0])

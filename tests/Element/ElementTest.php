@@ -14,7 +14,7 @@ class ElementTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->element = $this->getMockForAbstractClass('Lavary\Menu\Element\Element', []);
+        $this->element = $this->getMockForAbstractClass('\Lavary\Menu\Element\Element', []);
     }
 
     /**
