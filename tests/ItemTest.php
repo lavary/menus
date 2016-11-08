@@ -24,7 +24,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->manager = $this->createMock(Manager::class);
+        $this->manager = $this->getMock(Manager::class);
         $this->menu = new Item('Title', [], $this->manager);
     }
 
@@ -237,7 +237,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
 
     public function testRender()
     {
-        $el = $this->createMock(\Lavary\Menu\Element\Div::class);
+        $el = $this->getMock(\Lavary\Menu\Element\Div::class);
         $el->expects($this->once())->method('render');
 
         $this->menu->render($el);

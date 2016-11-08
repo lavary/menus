@@ -45,7 +45,7 @@ class Matcher implements MatcherInterface
      */
     public function addRegex($regex)
     {
-        $this->patterns[] = new Pattern\Regexpattern($regex);
+        $this->patterns[] = new Pattern\RegexPattern($regex);
 
         return $this;
     }

@@ -31,7 +31,7 @@ class BootstrapTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->manager = $this->createMock(Manager::class);
+        $this->manager = $this->getMock(Manager::class);
         $this->manager->method('extractAttributes')->will($this->returnValue(['class' => 'foo bar']));
 
         $this->menu = new Item('Title', [], $this->manager);

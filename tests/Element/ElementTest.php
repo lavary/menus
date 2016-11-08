@@ -44,10 +44,10 @@ class ElementTest extends \PHPUnit_Framework_TestCase
 
     public function testAddTagTextWithLinks()
     {
-        $link = $this->createMock(\Lavary\Menu\Link::class);
+        $link = $this->getMock(\Lavary\Menu\Link::class);
         $link->expects($this->any())->method('attr')->will($this->returnValue([]));
 
-        $item = $this->createMock(\Lavary\Menu\Item::class);
+        $item = $this->getMock(\Lavary\Menu\Item::class);
         $item->expects($this->once())
              ->method('getLink')
              ->will($this->returnValue($link));
@@ -61,7 +61,7 @@ class ElementTest extends \PHPUnit_Framework_TestCase
 
     public function testAddTagTextWithRaws()
     {
-        $item = $this->createMock(\Lavary\Menu\Item::class);
+        $item = $this->getMock(\Lavary\Menu\Item::class);
         $item->expects($this->once())
              ->method('getLink')
              ->will($this->returnValue(null));
