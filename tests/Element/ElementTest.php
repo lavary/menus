@@ -17,11 +17,22 @@ class ElementTest extends \PHPUnit_Framework_TestCase
         $this->element = $this->getMockForAbstractClass(Element::class, []);
     }
 
-    public function testGetTag()
+    /**
+     * @dataProvider tagDataProvider
+     */
+    public function testGetTag($type, $tag)
     {
-        $this->assertEquals('li', $this->invoke($this->element, 'getTag', ['ul']));
-        $this->assertEquals('li', $this->invoke($this->element, 'getTag', ['ol']));
-        $this->assertEquals('div', $this->invoke($this->element, 'getTag', ['div']));
+        $this->assertEquals($tag, $this->invoke($this->element, 'getTag', [$type]));
+    }
+
+    public function tagDataProvider()
+    {
+        return [
+            ['ol',    'li'],
+            ['li',    'li'],
+            ['div',   'div'],
+            ['dummy', 'div'],
+        ];
     }
 
     public function testOpenTagWithoutContent()
@@ -44,10 +55,16 @@ class ElementTest extends \PHPUnit_Framework_TestCase
 
     public function testAddTagTextWithLinks()
     {
-        $link = $this->getMock(\Lavary\Menu\Link::class);
+        $link = $this->getMockBuilder(\Lavary\Menu\Link::class)
+                     ->disableOriginalConstructor()
+                     ->getMock();
+        
         $link->expects($this->any())->method('attr')->will($this->returnValue([]));
 
-        $item = $this->getMock(\Lavary\Menu\Item::class);
+        $item = $this->getMock(\Lavary\Menu\Item::class)
+                     ->disableOriginalConstructor()
+                     ->getMock();
+       
         $item->expects($this->once())
              ->method('getLink')
              ->will($this->returnValue($link));
@@ -61,7 +78,10 @@ class ElementTest extends \PHPUnit_Framework_TestCase
 
     public function testAddTagTextWithRaws()
     {
-        $item = $this->getMock(\Lavary\Menu\Item::class);
+        $item = $this->getMock(\Lavary\Menu\Item::class)
+                     ->disableOriginalConstructor()
+                     ->getMock();
+        
         $item->expects($this->once())
              ->method('getLink')
              ->will($this->returnValue(null));

@@ -24,7 +24,10 @@ class ItemTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->manager = $this->getMock(Manager::class);
+        $this->manager = $this->getMockBuilder(Manager::class)
+                              ->disableOriginalConstructor()
+                              ->getMock();
+
         $this->menu = new Item('Title', [], $this->manager);
     }
 
