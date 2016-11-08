@@ -14,7 +14,7 @@ class ElementTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->element = $this->getMockForAbstractClass(Element::class, []);
+        $this->element = $this->getMockForAbstractClass('Lavary\Menu\Element\Element', []);
     }
 
     /**
@@ -54,13 +54,13 @@ class ElementTest extends \PHPUnit_Framework_TestCase
 
     public function testAddTagTextWithLinks()
     {
-        $link = $this->getMockBuilder(\Lavary\Menu\Link::class)
+        $link = $this->getMockBuilder('\Lavary\Menu\Link')
                      ->disableOriginalConstructor()
                      ->getMock();
         
         $link->expects($this->any())->method('attr')->will($this->returnValue([]));
 
-        $item = $this->getMockBuilder(\Lavary\Menu\Item::class)
+        $item = $this->getMockBuilder('\Lavary\Menu\Item')
                      ->disableOriginalConstructor()
                      ->getMock();
        
@@ -77,7 +77,7 @@ class ElementTest extends \PHPUnit_Framework_TestCase
 
     public function testAddTagTextWithRaws()
     {
-        $item = $this->getMockBuilder(\Lavary\Menu\Item::class)
+        $item = $this->getMockBuilder('\Lavary\Menu\Item')
                      ->disableOriginalConstructor()
                      ->getMock();
         

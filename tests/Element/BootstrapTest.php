@@ -31,7 +31,7 @@ class BootstrapTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->manager = $this->getMockBuilder(Manager::class)
+        $this->manager = $this->getMockBuilder('Lavary\Menu\Manager')
                               ->disableOriginalConstructor()
                               ->getMock();
         

@@ -15,8 +15,8 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $configuration = $this->getMock(\Lavary\Menu\Configuration\Configuration::class, ['get']);
-        $matcher       = $this->getMock(\Lavary\Menu\Matcher\Matcher::class);
+        $configuration = $this->getMock('\Lavary\Menu\Configuration\Configuration', ['get']);
+        $matcher       = $this->getMock('\Lavary\Menu\Matcher\Matcher');
 
         $configuration->expects($this->any())
                       ->method('get')
@@ -61,10 +61,10 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
 
     public function testGroup()
     {
-        $item = $this->getMockBuilder(\Lavary\Menu\Item::class)
+        $item = $this->getMockBuilder('\Lavary\Menu\Item')
                      ->disableOriginalConstructor()
                      ->getMock();
-                     
+
         $this->manager->group(['prefix' => 'foo/bar',    'class' => 'test-class', 'data-role' => 'item'], function () use ($item) {
              $this->manager->group(['prefix' => 'test/prefix', 'class' => 'another-test-class'], function () {
                 $this->assertEquals('foo/bar/test/prefix', $this->manager->getLastGroupPrefix());

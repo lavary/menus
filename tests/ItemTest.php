@@ -24,7 +24,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->manager = $this->getMockBuilder(Manager::class)
+        $this->manager = $this->getMockBuilder('Manager')
                               ->disableOriginalConstructor()
                               ->getMock();
 
@@ -54,18 +54,18 @@ class ItemTest extends \PHPUnit_Framework_TestCase
 
     public function testGetLink()
     {
-        $this->assertInstanceOf(\Lavary\Menu\Link::class, $this->menu->getLink());
+        $this->assertInstanceOf('\Lavary\Menu\Link', $this->menu->getLink());
     }
 
     public function testGetParent()
     {
         $child = $this->menu->add('test');
-        $this->assertInstanceOf(\Lavary\Menu\Item::class, $child->getParent());
+        $this->assertInstanceOf('\Lavary\Menu\Item', $child->getParent());
     }
 
     public function testGetManager()
     {
-        $this->assertInstanceOf(\Lavary\Menu\Manager::class, $this->menu->getManager());
+        $this->assertInstanceOf('\Lavary\Menu\Manager', $this->menu->getManager());
     }
 
     public function testPrepareOptions()
@@ -74,7 +74,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
 
         $this->assertArrayHasKey('url', $options);
         $this->assertEquals('test-url', $options['url']);
-        $this->assertInstanceOf(Item::class, $options['parent']);
+        $this->assertInstanceOf('Item', $options['parent']);
         $this->assertNull($options['id']);
 
         $options = $this->menu->prepareOptions(['id' => 15]);
@@ -88,7 +88,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
     {
         $child = $this->menu->add('First Item');
 
-        $this->assertInstanceOf(Item::class, $child);
+        $this->assertInstanceOf('Item', $child);
         
         $child = $this->menu->add('Second Item');
         
@@ -209,7 +209,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
         $this->menu->add('Third');
 
         $this->assertCount(3, $this->menu->getChildren());
-        $this->assertContainsOnlyInstancesOf(Item::class, $this->menu->getChildren());
+        $this->assertContainsOnlyInstancesOf('Item', $this->menu->getChildren());
     }
 
     public function testAddClass()
@@ -240,7 +240,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
 
     public function testRender()
     {
-        $el = $this->getMock(\Lavary\Menu\Element\Div::class);
+        $el = $this->getMock('\Lavary\Menu\Element\Div');
         $el->expects($this->once())->method('render');
 
         $this->menu->render($el);
@@ -341,8 +341,8 @@ class ItemTest extends \PHPUnit_Framework_TestCase
                 
         $this->menu->filter('show', true, true);
         
-        $this->assertContainsOnlyInstancesOf(Item::class, $this->menu->getChildren());
-        $this->assertContainsOnlyInstancesOf(Item::class, $about->getChildren());
+        $this->assertContainsOnlyInstancesOf('Item', $this->menu->getChildren());
+        $this->assertContainsOnlyInstancesOf('Item', $about->getChildren());
     }
 
     public function testSortByAsc()
@@ -386,7 +386,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
         $item = $this->menu->add('What we do');
         $fetched = $this->menu->get('whatWeDo');
 
-        $this->assertInstanceOf(Item::class, $fetched);
+        $this->assertInstanceOf('Item', $fetched);
         $this->assertEquals('What we do', $fetched->getTitle());
     }
 
@@ -396,7 +396,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
         $item = $this->menu->add('What we do');
         $fetched = $this->menu->find($item->getId());
 
-        $this->assertInstanceOf(Item::class, $fetched);
+        $this->assertInstanceOf('Item', $fetched);
         $this->assertEquals('What we do', $fetched->getTitle());
     }
 }
