@@ -1,6 +1,6 @@
 # Menus
 
-Menu is menu builder for PHP.
+A nice Menu builder for php +5.4 and 7.
 
 
 ![Version](http://img.shields.io/packagist/v/lavary/menu.svg?style=flat-square)
