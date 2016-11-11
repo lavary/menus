@@ -19,9 +19,9 @@ You can create a menu by using `make()` method. Here's a basic usage:
 ```php
 <?php
 
-use Lavary\Menus;
+use Lavary\Menus\MenuFactory;
 
-$factory = new Menu();
+$factory = new MenuFactory();
 
 $factory->make('MyNavBar', function($menu) {
   
