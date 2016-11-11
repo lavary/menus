@@ -24,14 +24,25 @@ use Lavary\Menu;
 $factory = new Menu();
 
 $factory->make('MyNavBar', function($menu) {
+  
   $menu->add('Home');
-  $menu->add('About', 'about');
+  
+  $menu->add('About', [url => 'about', 'class' => 'foo bar', 'data-role' => 'item'])->data('weight', 15);
+  $menu->about->add('Goals', 'about/goals');
+  
   $menu->add('services', 'services');
   $menu->add('Contact', 'contact');
-})
+  
+});
+
+echo $factory->get('myNavBar')->asBootstrap(['navbar-inverse']);
+
+// or
+
+echo $factory->get('myNavBar')->asUl();
 ```
 
-Please checkout the [documentation](https://github.com/lavary/menu/wiki) to learn about all the features.
+Please checkout the [documentation](https://github.com/lavary/menu/wiki/Menu-Documentation) to learn about all the features.
 
 
 ## If You Need Help
