@@ -42,7 +42,7 @@ echo $factory->get('myNavBar')->asBootstrap(['navbar-inverse']);
 echo $factory->get('myNavBar')->asUl();
 ```
 
-Please checkout the [documentation](https://github.com/lavary/menu/wiki/Menu-Documentation) to learn about all the features.
+Please checkout the [documentation](https://github.com/lavary/menus/wiki/Menus) to learn about all the features.
 
 
 ## If You Need Help
