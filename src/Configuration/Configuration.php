@@ -78,9 +78,9 @@ class Configuration
     {
         foreach ([
             $filename,
-            __DIR__ . '/../../../../../menu.yml',
-            __DIR__ . '/../../menu.yml',
-            __DIR__ . '/../menu.yml'
+            __DIR__ . '/../../../../../menus.yml',
+            __DIR__ . '/../../menus.yml',
+            __DIR__ . '/../menus.yml'
         
         ] as $file) {
             if (file_exists($file)) {
