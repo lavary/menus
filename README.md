@@ -53,4 +53,4 @@ Please submit all issues and questions using GitHub issues and I will try to hel
 
 ## License
 
-*Menu* is free software distributed under the terms of the MIT license.
+*Menus* is free software distributed under the terms of the MIT license.
