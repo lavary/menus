@@ -1,9 +1,9 @@
 <?php
 
-namespace Lavary\Menu\Element;
+namespace Lavary\Menus\Element;
 
-use Lavary\Menu\Common\Attr;
-use Lavary\Menu\Collection;
+use Lavary\Menus\Common\Attr;
+use Lavary\Menus\Collection;
 
 abstract class Element
 {
@@ -20,7 +20,7 @@ abstract class Element
     /**
      * Generate the menu items as list items using a recursive function
      *
-     * @param \Lavary\Menu\Collection
+     * @param \Lavary\Menus\Collection
      * @param string $type
      *
      * @return string
@@ -54,11 +54,11 @@ abstract class Element
     /**
      * Return HTML link if item has a link
      *
-     * @param \Lavary\Menu\Item $item
+     * @param \Lavary\Menus\Item $item
      *
      * @return string
      */
-    protected function addTagText(\Lavary\Menu\Item $item)
+    protected function addTagText(\Lavary\Menus\Item $item)
     {
         if ($link = $item->getLink()) {
             $link->attr('href', $item->getUri());
@@ -129,11 +129,11 @@ abstract class Element
     /**
      * Run the registered hooks
      *
-     * @param Lavary\Menu\Item $item
+     * @param Lavary\Menus\Item $item
      *
      * @return void
      */
-    protected function runHooks(\Lavary\Menu\Item $item)
+    protected function runHooks(\Lavary\Menus\Item $item)
     {
         $hooks = array_merge($this->defaultHooks, $this->hooks());
         foreach ($hooks as $hook) {
@@ -153,4 +153,13 @@ abstract class Element
     {
         return [];
     }
+
+    /**
+     * Render the collection
+     *
+     * @param \Lavary\Menus\Collection $collection
+     *
+     * @return string
+     */
+    abstract public function render(\Lavary\Menus\Collection $collection);
 }

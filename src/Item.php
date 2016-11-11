@@ -1,13 +1,13 @@
 <?php
 
-namespace Lavary\Menu;
+namespace Lavary\Menus;
 
-use Lavary\Menu\Common\Str;
-use Lavary\Menu\Common\Arr;
-use Lavary\Menu\Common\Url;
-use Lavary\Menu\Common\Attr;
-use Lavary\Menu\Traits\Printer;
-use Lavary\Menu\Element\ElementInterface;
+use Lavary\Menus\Common\Str;
+use Lavary\Menus\Common\Arr;
+use Lavary\Menus\Common\Url;
+use Lavary\Menus\Common\Attr;
+use Lavary\Menus\Traits\Printer;
+use Lavary\Menus\Element\ElementInterface;
 
 class Item implements Attributable
 {
@@ -16,7 +16,7 @@ class Item implements Attributable
     /**
      * Reference to the menu manager
      *
-     * @var Lavary\Menu\Manager
+     * @var Lavary\Menus\Manager
      */
     protected $manager;
 
@@ -58,7 +58,7 @@ class Item implements Attributable
     /**
      * Children collection
      *
-     * @var \Lavary\Menu\Collection
+     * @var \Lavary\Menus\Collection
      */
     protected $children = null;
     
@@ -79,7 +79,7 @@ class Item implements Attributable
     /**
      * Item's anchor object
      *
-     * @var Lavary\Menu\Link
+     * @var Lavary\Menus\Link
      */
     protected $link = null;
 
@@ -91,13 +91,13 @@ class Item implements Attributable
     protected $current = null;
 
     /**
-     * Creates a new Lavary\Menu\MenuItem instance.
+     * Creates a new Lavary\Menus\MenuItem instance.
      *
      * @param  string  $title
      * @param  string  $url
      * @param  array  $attributes
      * @param  int  $parent
-     * @param  Lavary\Menu\Manager $manager
+     * @param  Lavary\Menus\Manager $manager
      *
      * @return void
      */
@@ -152,7 +152,7 @@ class Item implements Attributable
     /**
      * Return item's link
      *
-     * @return Lavary\Menu\Link
+     * @return Lavary\Menus\Link
      */
     public function getLink()
     {
@@ -162,7 +162,7 @@ class Item implements Attributable
     /**
      * Return item's parent object
      *
-     * @return Lavary\Menu\Item
+     * @return Lavary\Menus\Item
      */
     public function getParent()
     {
@@ -172,7 +172,7 @@ class Item implements Attributable
     /**
      * Return item's manager
      *
-     * @return Lavary\Menu\Manager
+     * @return Lavary\Menus\Manager
      */
     public function getManager()
     {
@@ -185,7 +185,7 @@ class Item implements Attributable
      * @param  string  $title
      * @param  string|array  $options
      *
-     * @return Lavary\Menu\Item $item
+     * @return Lavary\Menus\Item $item
      */
     public function add($title, $options = null)
     {
@@ -221,7 +221,7 @@ class Item implements Attributable
      * @param string $title
      * @param array $options
      *
-     * @return Lavary\Menu\Item
+     * @return Lavary\Menus\Item
      */
     public function raw($title, array $options = [])
     {
@@ -305,7 +305,7 @@ class Item implements Attributable
      *
      * @param string
      *
-     * @return Lavary\Menu\Item
+     * @return Lavary\Menus\Item
      */
     public function addClass($class)
     {
@@ -362,7 +362,7 @@ class Item implements Attributable
     /**
      * Prepends text or html to the item
      *
-     * @return Lavary\Menu\Item
+     * @return Lavary\Menus\Item
      */
     public function prependText($html)
     {
@@ -374,7 +374,7 @@ class Item implements Attributable
     /**
      * Appends text or html to the item
      *
-     * @return Lavary\Menu\Item
+     * @return Lavary\Menus\Item
      */
     public function appendText($html)
     {
@@ -396,7 +396,7 @@ class Item implements Attributable
     /**
      * Returns item's children
      *
-     * @return Lavary\Menu\Collection
+     * @return Lavary\Menus\Collection
      */
     public function getChildren()
     {
@@ -501,7 +501,7 @@ class Item implements Attributable
      *
      * @param  mixed
      *
-     * @return string|Lavary\Menu\Item
+     * @return string|Lavary\Menus\Item
      */
     public function data()
     {
@@ -521,7 +521,7 @@ class Item implements Attributable
     /**
      * Render the menu using a certain element
      *
-     * @param \Lavary\Menu\Element\ElementInterface $element
+     * @param \Lavary\Menus\Element\ElementInterface $element
      *
      * @return string
      */
@@ -567,7 +567,7 @@ class Item implements Attributable
      * @param boolean $status
      *
      */
-    protected function currentBubble($status, \Lavary\Menu\Item $item = null)
+    protected function currentBubble($status, \Lavary\Menus\Item $item = null)
     {
         $item->forceCurrentStatus($status);
         $parent = $item->getParent();
@@ -592,7 +592,7 @@ class Item implements Attributable
      *
      * @param  callable $callback
      *
-     * @return Lavary\Menu\Builder
+     * @return Lavary\Menus\Builder
      */
     public function filter()
     {
@@ -623,7 +623,7 @@ class Item implements Attributable
      * @param string $sort_by
      * @param string|callable $sort_type
      *
-     * @return Lavary\Menu\Builder
+     * @return Lavary\Menus\Builder
      */
     public function sortBy($sort_by, $sort_type = 'asc')
     {
@@ -669,7 +669,7 @@ class Item implements Attributable
     /**
      * Returns menu item by name
      *
-     * @return Lavary\Menu\Item
+     * @return Lavary\Menus\Item
      */
     public function get($title)
     {
@@ -680,7 +680,7 @@ class Item implements Attributable
     /**
      * Returns menu item by Id
      *
-     * @return Lavary\Menu\Item
+     * @return Lavary\Menus\Item
      */
     public function find($id)
     {
@@ -710,7 +710,7 @@ class Item implements Attributable
      * @param string $attribute
      * @param mixed  $value
      *
-     * @return Lavary\Menu\Collection
+     * @return Lavary\Menus\Collection
      */
     protected function recursiveFilter($attribute, $value)
     {
@@ -740,7 +740,7 @@ class Item implements Attributable
      * @param string $method
      * @param array  $args
      *
-     * @return Lavary\Menu\Item
+     * @return Lavary\Menus\Item
      */
     public function __call($method, $args)
     {

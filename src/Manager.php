@@ -1,25 +1,25 @@
 <?php
 
-namespace Lavary\Menu;
+namespace Lavary\Menus;
 
-use Lavary\Menu\Common\Arr;
-use Lavary\Menu\Common\Attr;
-use Lavary\Menu\Matcher\MatcherInterface;
-use Lavary\Menu\Configuration\Configuration;
+use Lavary\Menus\Common\Arr;
+use Lavary\Menus\Common\Attr;
+use Lavary\Menus\Matcher\MatcherInterface;
+use Lavary\Menus\Configuration\Configuration;
 
 class Manager
 {
     /**
      * Menu configuration
      *
-     * @var Lavary\Menu\Configuration\Configuration
+     * @var Lavary\Menus\Configuration\Configuration
      */
     protected $configuration;
 
     /**
      * Menu matcher
      *
-     * @var Lavary\Menu\Matcher\MatcherInterface
+     * @var Lavary\Menus\Matcher\MatcherInterface
      */
     protected $matcher;
 
@@ -51,7 +51,7 @@ class Manager
     /**
      * Sets the matcher object for this menu
      *
-     * @param  \Lavary\Menu\Matcher\Matcher $matcher
+     * @param  \Lavary\Menus\Matcher\Matcher $matcher
      *
      * @return void
      */
@@ -63,7 +63,7 @@ class Manager
     /**
      * Sets the configuration settings
      *
-     * @param  \Lavary\Menu\Configuration\Configuration $configuration
+     * @param  \Lavary\Menus\Configuration\Configuration $configuration
      *
      * @return void
      */

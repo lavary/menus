@@ -1,6 +1,6 @@
 <?php
 
-namespace Lavary\Menu\Matcher\Pattern;
+namespace Lavary\Menus\Matcher\Pattern;
 
 class RegexPattern implements PatternInterface
 {
@@ -19,7 +19,7 @@ class RegexPattern implements PatternInterface
     /**
      * Define whether the item'S URI matches the current URI
      *
-     * @param \Lavary\Menu\Item $item
+     * @param \Lavary\Menus\Item $item
      *
      * @return boolean
      */

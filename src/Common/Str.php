@@ -1,6 +1,6 @@
 <?php
 
-namespace Lavary\Menu\Common;
+namespace Lavary\Menus\Common;
 
 class Str
 {

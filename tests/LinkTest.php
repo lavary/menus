@@ -1,15 +1,15 @@
 <?php
 
-namespace Lavary\Menu\Tests;
+namespace Lavary\Menus\Tests;
 
-use Lavary\Menu\Link;
+use Lavary\Menus\Link;
 
 class LinkTest extends \PHPUnit_Framework_TestCase
 {
    /**
     * Link instance
     *
-    * @var \Lavary\Menu\Link
+    * @var \Lavary\Menus\Link
     */
     protected $link;
 

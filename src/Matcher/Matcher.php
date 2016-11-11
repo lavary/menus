@@ -1,20 +1,20 @@
 <?php
 
-namespace Lavary\Menu\Matcher;
+namespace Lavary\Menus\Matcher;
 
-use Lavary\Menu\Matcher\Pattern;
+use Lavary\Menus\Matcher\Pattern;
 
 class Matcher implements MatcherInterface
 {
     /**
-     * @var \Lavary\Menu\Matcher\Pattern\PatternInterface
+     * @var \Lavary\Menus\Matcher\Pattern\PatternInterface
      */
     protected $patterns = [];
 
     /**
      * Add a pattern to the matcher
      *
-     * @param \Lavary\Menu\Matcher\Pattern\PatternInterface $pattern
+     * @param \Lavary\Menus\Matcher\Pattern\PatternInterface $pattern
      *
      * @return $this
      */
@@ -39,7 +39,7 @@ class Matcher implements MatcherInterface
     /**
      * Add an instance a regex pattern to the list of patterns
      *
-     * @param \Lavary\Menu\Matcher\Pattern\PatternInterface $pattern
+     * @param \Lavary\Menus\Matcher\Pattern\PatternInterface $pattern
      *
      * @return $this
      */
@@ -53,11 +53,11 @@ class Matcher implements MatcherInterface
     /**
      * Check whether the item's URI is the current URI or not
      *
-     * @param \Lavary\Menu\Item $item
+     * @param \Lavary\Menus\Item $item
      *
      * @return boolean
      */
-    public function isCurrent(\Lavary\Menu\Item $item)
+    public function isCurrent(\Lavary\Menus\Item $item)
     {
         if ($item->isCurrent() === true) {
             return true;

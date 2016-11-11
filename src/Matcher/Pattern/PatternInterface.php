@@ -1,6 +1,6 @@
 <?php
 
-namespace Lavary\Menu\Matcher\Pattern;
+namespace Lavary\Menus\Matcher\Pattern;
 
 interface PatternInterface
 {

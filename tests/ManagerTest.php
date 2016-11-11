@@ -1,22 +1,22 @@
 <?php
 
-namespace Lavary\Menu\Tests;
+namespace Lavary\Menus\Tests;
 
-use Lavary\Menu\Manager;
+use Lavary\Menus\Manager;
 
 class ManagerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Menu builder instance
      *
-     * @var \Lavary\Menu\Manager
+     * @var \Lavary\Menus\Manager
      */
     protected $manager;
 
     protected function setUp()
     {
-        $configuration = $this->getMockBuilder('\Lavary\Menu\Configuration\Configuration', ['get'])->getMock();
-        $matcher       = $this->getMockBuilder('\Lavary\Menu\Matcher\Matcher')->getMock();
+        $configuration = $this->getMockBuilder('\Lavary\Menus\Configuration\Configuration', ['get'])->getMock();
+        $matcher       = $this->getMockBuilder('\Lavary\Menus\Matcher\Matcher')->getMock();
 
         $configuration->expects($this->any())
                       ->method('get')
@@ -61,7 +61,7 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
 
     public function testGroup()
     {
-        $item = $this->getMockBuilder('\Lavary\Menu\Item')
+        $item = $this->getMockBuilder('\Lavary\Menus\Item')
                      ->disableOriginalConstructor()
                      ->getMock();
 

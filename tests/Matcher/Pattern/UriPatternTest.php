@@ -1,16 +1,16 @@
 <?php
 
-namespace Lavary\Menu\Tests;
+namespace Lavary\Menus\Tests;
 
-use Lavary\Menu\Matcher\Pattern\UriPattern;
-use Lavary\Menu\Item;
+use Lavary\Menus\Matcher\Pattern\UriPattern;
+use Lavary\Menus\Item;
 
 class UriPatternTest extends \PHPUnit_Framework_TestCase
 {
    /**
     * The pattern instance
     *
-    * @var \Lavary\Menu\Matcher\Pattern\UriPattern
+    * @var \Lavary\Menus\Matcher\Pattern\UriPattern
     */
     protected $pattern;
 

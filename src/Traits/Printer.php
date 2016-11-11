@@ -1,11 +1,11 @@
 <?php
 
-namespace Lavary\Menu\Traits;
+namespace Lavary\Menus\Traits;
 
-use Lavary\Menu\Element\Ul;
-use Lavary\Menu\Element\Ol;
-use Lavary\Menu\Element\Div;
-use Lavary\Menu\Element\Bootstrap;
+use Lavary\Menus\Element\Ul;
+use Lavary\Menus\Element\Ol;
+use Lavary\Menus\Element\Div;
+use Lavary\Menus\Element\Bootstrap;
 
 trait Printer
 {

@@ -1,13 +1,14 @@
 {
-    "name": "lavary/menu",
+    "name": "lavary/menus",
     "description": "Create menus in your PHP application in no time",
     "type": "library",
     "keywords": [
         "Menu",
+        "Menus",
         "Menu Builder",
         "Menu Manager"
     ],
-    "homepage": "https://github.com/lavary/menu",
+    "homepage": "https://github.com/lavary/menus",
     "license": "MIT",
     "authors": [
         {
@@ -17,7 +18,7 @@
     ],
     "support": {
         "email": "mrl.8081@gmail.com",
-        "issues": "http://github.com/lavary/menu/issues"
+        "issues": "http://github.com/lavary/menus/issues"
     },
     "require": {
        "php":  ">=5.4.0",      
@@ -28,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lavary\\Menu\\": "src/"
+            "Lavary\\Menus\\": "src/"
         }
     },
     "minimum-stability": "dev",

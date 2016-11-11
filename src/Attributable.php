@@ -1,6 +1,6 @@
 <?php
 
-namespace Lavary\Menu;
+namespace Lavary\Menus;
 
 interface Attributable
 {

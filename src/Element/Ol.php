@@ -1,10 +1,10 @@
 <?php
 
-namespace Lavary\Menu\Element;
+namespace Lavary\Menus\Element;
 
-use Lavary\Menu\Common\Attr;
+use Lavary\Menus\Common\Attr;
 
-class Ol extends Element implements ElementInterface
+class Ol extends Element
 {
     /**
      * Stores attributes of the <ul> tag
@@ -33,11 +33,11 @@ class Ol extends Element implements ElementInterface
     /**
      * Returns the menu as an unordered list.
      *
-     * @param \Lavary\Menu\Collection $collection
+     * @param \Lavary\Menus\Collection $collection
      *
      * @return string
      */
-    public function render(\Lavary\Menu\Collection $collection)
+    public function render(\Lavary\Menus\Collection $collection)
     {
         return '<ol' . Attr::printAttributes($this->attributes) . '>' . static::populate($collection, 'ol', $this->dropdown) . '</ol>';
     }

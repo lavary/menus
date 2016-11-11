@@ -1,20 +1,20 @@
 <?php
 
-namespace Lavary\Menu\Tests\Element;
+namespace Lavary\Menus\Tests\Element;
 
-use Lavary\Menu\Element\Element;
-use Lavary\Menu\Item;
+use Lavary\Menus\Element\Element;
+use Lavary\Menus\Item;
 
 class ElementTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Lavary\Menu\Element\Element
+     * @var Lavary\Menus\Element\Element
      */
     protected $element;
 
     public function setUp()
     {
-        $this->element = $this->getMockForAbstractClass('\Lavary\Menu\Element\Element', []);
+        $this->element = $this->getMockForAbstractClass('\Lavary\Menus\Element\Element', []);
     }
 
     /**
@@ -54,13 +54,13 @@ class ElementTest extends \PHPUnit_Framework_TestCase
 
     public function testAddTagTextWithLinks()
     {
-        $link = $this->getMockBuilder('\Lavary\Menu\Link')
+        $link = $this->getMockBuilder('\Lavary\Menus\Link')
                      ->disableOriginalConstructor()
                      ->getMock();
         
         $link->expects($this->any())->method('attr')->will($this->returnValue([]));
 
-        $item = $this->getMockBuilder('\Lavary\Menu\Item')
+        $item = $this->getMockBuilder('\Lavary\Menus\Item')
                      ->disableOriginalConstructor()
                      ->getMock();
        
@@ -77,7 +77,7 @@ class ElementTest extends \PHPUnit_Framework_TestCase
 
     public function testAddTagTextWithRaws()
     {
-        $item = $this->getMockBuilder('\Lavary\Menu\Item')
+        $item = $this->getMockBuilder('\Lavary\Menus\Item')
                      ->disableOriginalConstructor()
                      ->getMock();
         

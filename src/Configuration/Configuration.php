@@ -1,6 +1,6 @@
 <?php
 
-namespace Lavary\Menu\Configuration;
+namespace Lavary\Menus\Configuration;
 
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\Yaml\Yaml;

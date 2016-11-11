@@ -1,6 +1,6 @@
 <?php
 
-namespace Lavary\Menu;
+namespace Lavary\Menus;
 
 class Link implements Attributable
 {
@@ -62,7 +62,7 @@ class Link implements Attributable
      *
      * @param string $href
      *
-     * @return Lavary\Menu\Link
+     * @return Lavary\Menus\Link
      */
     public function setHref($href)
     {

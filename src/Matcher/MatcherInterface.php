@@ -1,15 +1,15 @@
 <?php
 
-namespace Lavary\Menu\Matcher;
+namespace Lavary\Menus\Matcher;
 
 interface MatcherInterface
 {
     /**
      * Make the item active
      *
-     * @param \Lavary\Menu\Item $item
+     * @param \Lavary\Menus\Item $item
      *
      * @return boolean
      */
-    public function isCurrent(\Lavary\Menu\Item $item);
+    public function isCurrent(\Lavary\Menus\Item $item);
 }

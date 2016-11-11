@@ -1,37 +1,37 @@
 <?php
 
-namespace Lavary\Menu\Tests;
+namespace Lavary\Menus\Tests;
 
-use Lavary\Menu\Manager;
-use Lavary\Menu\Item;
-use Lavary\Menu\Element\Bootstrap;
+use Lavary\Menus\Manager;
+use Lavary\Menus\Item;
+use Lavary\Menus\Element\Bootstrap;
 
 class BootstrapTest extends \PHPUnit_Framework_TestCase
 {
    /**
     * Menu builder instance
     *
-    * @var \Lavary\Menu\Manager
+    * @var \Lavary\Menus\Manager
     */
     protected $manager;
 
     /**
      * Item instance
      *
-     * @var \Lavary\Menu\Item
+     * @var \Lavary\Menus\Item
      */
     protected $menu;
 
     /**
      * Bootstrap renderer
      *
-     * @var \Lavary\Menu\Element\Bootstrap
+     * @var \Lavary\Menus\Element\Bootstrap
      */
     protected $bootstrap;
 
     public function setUp()
     {
-        $this->manager = $this->getMockBuilder('Lavary\Menu\Manager')
+        $this->manager = $this->getMockBuilder('Lavary\Menus\Manager')
                               ->disableOriginalConstructor()
                               ->getMock();
         

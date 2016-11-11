@@ -1,6 +1,6 @@
 <?php
 
-namespace Lavary\Menu;
+namespace Lavary\Menus;
 
 use Countable;
 use ArrayAccess;
@@ -9,9 +9,9 @@ use CachingIterator;
 use JsonSerializable;
 use IteratorAggregate;
 use InvalidArgumentException;
-use Lavary\Menu\Common\Helpers;
-use Lavary\Menu\Traits\Printer;
-use Lavary\Menu\Element\ElementInterface;
+use Lavary\Menus\Common\Helpers;
+use Lavary\Menus\Traits\Printer;
+use Lavary\Menus\Element\ElementInterface;
 
 class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
 {
@@ -1104,7 +1104,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     /**
      * Render the menu using a certain element
      *
-     * @param \Lavary\Menu\Element\ElementInterface $element
+     * @param \Lavary\Menus\Element\ElementInterface $element
      *
      * @return string
      */
@@ -1117,7 +1117,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
      * Add attributes to a collection of items
      *
      * @param  mixed
-     * @return Lavary\Menu\Collection
+     * @return Lavary\Menus\Collection
      */
     public function attr()
     {
@@ -1139,7 +1139,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
      *
      * @param  mixed
      *
-     * @return Lavary\Menu\Collection
+     * @return Lavary\Menus\Collection
      */
     public function data()
     {
@@ -1155,7 +1155,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
      *
      * @param  string
      *
-     * @return Lavary\Menu\Collection
+     * @return Lavary\Menus\Collection
      */
     public function appendText($html)
     {
@@ -1171,7 +1171,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
      *
      * @param  string
      *
-     * @return Lavary\Menu\Collection
+     * @return Lavary\Menus\Collection
      */
     public function prependText($html, $key = null)
     {

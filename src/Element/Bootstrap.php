@@ -1,10 +1,10 @@
 <?php
 
-namespace Lavary\Menu\Element;
+namespace Lavary\Menus\Element;
 
-use Lavary\Menu\Common\Attr;
+use Lavary\Menus\Common\Attr;
 
-class Bootstrap extends Element implements ElementInterface
+class Bootstrap extends Element
 {
     /**
      * Stores attributes of the <ul> tag
@@ -33,11 +33,11 @@ class Bootstrap extends Element implements ElementInterface
     /**
      * Returns the menu as an unordered list.
      *
-     * @param \Lavary\Menu\Collection $collection
+     * @param \Lavary\Menus\Collection $collection
      *
      * @return string
      */
-    public function render(\Lavary\Menu\Collection $collection)
+    public function render(\Lavary\Menus\Collection $collection)
     {
         return '<ul'
         . Attr::printAttributes(Attr::mergeAttributes($this->attributes, ['class' => 'nav navbar-nav']))
@@ -53,11 +53,11 @@ class Bootstrap extends Element implements ElementInterface
     /**
      * Hook for adding a caret symbol if item has children
      *
-     * @param Lavary\Menu\Item $item
+     * @param Lavary\Menus\Item $item
      *
      * @return void
      */
-    protected function addCaret(\Lavary\Menu\Item $item)
+    protected function addCaret(\Lavary\Menus\Item $item)
     {
         if ($item->hasChildren()) {
             $item->appendText(' <span class="caret"></span>');
@@ -67,11 +67,11 @@ class Bootstrap extends Element implements ElementInterface
     /**
      * Check if the item is a raw item in a bootstrap template
      *
-     * @param Lavary\Menu\Item $item
+     * @param Lavary\Menus\Item $item
      *
      * @return void
      */
-    protected function disableRaw(\Lavary\Menu\Item $item)
+    protected function disableRaw(\Lavary\Menus\Item $item)
     {
         if (! $item->getLink()) {
             $item->addClass('disabled')
@@ -83,11 +83,11 @@ class Bootstrap extends Element implements ElementInterface
     /**
      * Add required Bootstrap classes to the item
      *
-     * @param Lavary\Menu\Item $item
+     * @param Lavary\Menus\Item $item
      *
      * @return void
      */
-    protected function addBootstrapStyles(\Lavary\Menu\Item $item)
+    protected function addBootstrapStyles(\Lavary\Menus\Item $item)
     {
         $link = $item->getLink();
         if ($item->hasChildren()) {

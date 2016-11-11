@@ -1,24 +1,24 @@
 <?php
 
-namespace Lavary\Menu;
+namespace Lavary\Menus;
 
-use Lavary\Menu\Matcher\Matcher;
-use Lavary\Menu\Matcher\MatcherInterface;
-use Lavary\Menu\Configuration\Configuration;
+use Lavary\Menus\Matcher\Matcher;
+use Lavary\Menus\Matcher\MatcherInterface;
+use Lavary\Menus\Configuration\Configuration;
 
 class Menu
 {
     /**
      * Menu collection
      *
-     * @var Lavary\Menu\Collection
+     * @var Lavary\Menus\Collection
      */
     protected $collection;
 
     /**
      * Menu manager
      *
-     * @var Lavary\Menu\Manager
+     * @var Lavary\Menus\Manager
      */
     protected $manager;
  
@@ -36,7 +36,7 @@ class Menu
 
         // Matcher wit ha default pattern
         $matcher = new Matcher();
-        $matcher->addPattern(new \Lavary\Menu\Matcher\Pattern\UriPattern($_SERVER['REQUEST_URI']));
+        $matcher->addPattern(new \Lavary\Menus\Matcher\Pattern\UriPattern($_SERVER['REQUEST_URI']));
 
         $this->manager = new Manager($configuration, $matcher);
     }
@@ -47,7 +47,7 @@ class Menu
      * @param  string  $name
      * @param  callable  $callback
      *
-     * @return \Lavary\Menu\Item
+     * @return \Lavary\Menus\Item
      */
     public function make($name, \Closure $callback)
     {
@@ -67,7 +67,7 @@ class Menu
     /**
      * Sets the matcher object for this menu
      *
-     * @param  \Lavary\Menu\Matcher\Matcher $matcher
+     * @param  \Lavary\Menus\Matcher\Matcher $matcher
      *
      * @return void
      */
@@ -79,7 +79,7 @@ class Menu
     /**
      * Sets the configuration settings
      *
-     * @param  \Lavary\Menu\Configuration\Configuration $configuration
+     * @param  \Lavary\Menus\Configuration\Configuration $configuration
      *
      * @return void
      */
