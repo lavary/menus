@@ -7,6 +7,7 @@ A nice Menu builder for php +5.4 and 7.
 ![Build](http://img.shields.io/travis/lavary/menus.svg?style=flat-square)
 
 
+* [Documentation](https://github.com/lavary/menus/wiki/Menus)
 
 To install it, use composer:
 
