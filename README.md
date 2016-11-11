@@ -28,7 +28,7 @@ $factory->make('MyNavBar', function($menu) {
   
   $menu->add('Home');
   
-  $menu->add('About', [url => 'about', 'class' => 'foo bar', 'data-role' => 'item'])->data('weight', 15);
+  $menu->add('About', ['url' => 'about', 'class' => 'foo bar', 'data-role' => 'item'])->data('weight', 15);
   $menu->about->add('Goals', 'about/goals');
   
   $menu->add('services', 'services');
