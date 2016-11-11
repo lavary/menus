@@ -12,7 +12,7 @@ A nice Menu builder for PHP +5.4 and 7.
 To install it, use composer:
 
 ```bash
-composer require lavary/menu
+composer require lavary/menus
 ```
 
 You can create a menu by using `make()` method. Here's a basic usage:
