@@ -1,12 +1,13 @@
 # Menus
 
-Menu is menu builder for PHP.
+A nice Menu builder for PHP +5.4 and 7.
 
 
-![Version](http://img.shields.io/packagist/v/lavary/menu.svg?style=flat-square)
-![Build](http://img.shields.io/travis/lavary/menu.svg?style=flat-square)
+![Version](http://img.shields.io/packagist/v/lavary/menus.svg?style=flat-square)
+![Build](http://img.shields.io/travis/lavary/menus.svg?style=flat-square)
 
 
+* [Documentation](https://github.com/lavary/menus/wiki/Menus)
 
 To install it, use composer:
 
@@ -42,7 +43,7 @@ echo $factory->get('myNavBar')->asBootstrap(['navbar-inverse']);
 echo $factory->get('myNavBar')->asUl();
 ```
 
-Please checkout the [documentation](https://github.com/lavary/menu/wiki/Menu-Documentation) to learn about all the features.
+Please checkout the [documentation](https://github.com/lavary/menus/wiki/Menus) to learn about all the features.
 
 
 ## If You Need Help
