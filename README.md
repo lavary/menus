@@ -3,8 +3,8 @@
 A nice Menu builder for php +5.4 and 7.
 
 
-![Version](http://img.shields.io/packagist/v/lavary/menu.svg?style=flat-square)
-![Build](http://img.shields.io/travis/lavary/menu.svg?style=flat-square)
+![Version](http://img.shields.io/packagist/v/lavary/menus.svg?style=flat-square)
+![Build](http://img.shields.io/travis/lavary/menus.svg?style=flat-square)
 
 
 
