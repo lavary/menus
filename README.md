@@ -1,4 +1,4 @@
-# Menu
+# Menus
 
 Menu is menu builder for PHP.
 
@@ -19,7 +19,7 @@ You can create a menu by using `make()` method. Here's a basic usage:
 ```php
 <?php
 
-use Lavary\Menu;
+use Lavary\Menus;
 
 $factory = new Menu();
 
