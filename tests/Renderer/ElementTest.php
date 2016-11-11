@@ -1,20 +1,20 @@
 <?php
 
-namespace Lavary\Menus\Tests\Element;
+namespace Lavary\Menus\Tests\Renderer;
 
-use Lavary\Menus\Element\Element;
+use Lavary\Menus\Renderer\Element;
 use Lavary\Menus\Item;
 
 class ElementTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Lavary\Menus\Element\Element
+     * @var Lavary\Menus\Renderer\Element
      */
     protected $element;
 
     public function setUp()
     {
-        $this->element = $this->getMockForAbstractClass('\Lavary\Menus\Element\Element', []);
+        $this->element = $this->getMockForAbstractClass('\Lavary\Menus\Renderer\Element', []);
     }
 
     /**

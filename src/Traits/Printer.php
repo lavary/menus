@@ -2,10 +2,10 @@
 
 namespace Lavary\Menus\Traits;
 
-use Lavary\Menus\Element\Ul;
-use Lavary\Menus\Element\Ol;
-use Lavary\Menus\Element\Div;
-use Lavary\Menus\Element\Bootstrap;
+use Lavary\Menus\Renderer\Ul;
+use Lavary\Menus\Renderer\Ol;
+use Lavary\Menus\Renderer\Div;
+use Lavary\Menus\Renderer\Bootstrap;
 
 trait Printer
 {

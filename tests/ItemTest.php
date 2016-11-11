@@ -240,7 +240,7 @@ class ItemTest extends \PHPUnit_Framework_TestCase
 
     public function testRender()
     {
-        $el = $this->getMockBuilder('\Lavary\Menus\Element\Div')->getMock();
+        $el = $this->getMockBuilder('\Lavary\Menus\Renderer\Div')->getMock();
         $el->expects($this->once())->method('render');
 
         $this->menu->render($el);

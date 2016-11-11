@@ -7,7 +7,7 @@ use Lavary\Menus\Common\Arr;
 use Lavary\Menus\Common\Url;
 use Lavary\Menus\Common\Attr;
 use Lavary\Menus\Traits\Printer;
-use Lavary\Menus\Element\Element;
+use Lavary\Menus\Renderer\Element;
 
 class Item implements Attributable
 {
@@ -521,7 +521,7 @@ class Item implements Attributable
     /**
      * Render the menu using a certain element
      *
-     * @param \Lavary\Menus\Element\Element $element
+     * @param \Lavary\Menus\Renderer\Element $element
      *
      * @return string
      */

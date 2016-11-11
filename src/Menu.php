@@ -6,7 +6,7 @@ use Lavary\Menus\Matcher\Matcher;
 use Lavary\Menus\Matcher\MatcherInterface;
 use Lavary\Menus\Configuration\Configuration;
 
-class Menu
+class Factory
 {
     /**
      * Menu collection

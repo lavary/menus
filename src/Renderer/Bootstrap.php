@@ -1,6 +1,6 @@
 <?php
 
-namespace Lavary\Menus\Element;
+namespace Lavary\Menus\Renderer;
 
 use Lavary\Menus\Common\Attr;
 

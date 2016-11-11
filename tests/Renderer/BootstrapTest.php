@@ -4,7 +4,7 @@ namespace Lavary\Menus\Tests;
 
 use Lavary\Menus\Manager;
 use Lavary\Menus\Item;
-use Lavary\Menus\Element\Bootstrap;
+use Lavary\Menus\Renderer\Bootstrap;
 
 class BootstrapTest extends \PHPUnit_Framework_TestCase
 {
@@ -25,7 +25,7 @@ class BootstrapTest extends \PHPUnit_Framework_TestCase
     /**
      * Bootstrap renderer
      *
-     * @var \Lavary\Menus\Element\Bootstrap
+     * @var \Lavary\Menus\Renderer\Bootstrap
      */
     protected $bootstrap;
 

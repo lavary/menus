@@ -1,10 +1,10 @@
 <?php
 
-namespace Lavary\Menus\Element;
+namespace Lavary\Menus\Renderer;
 
 use Lavary\Menus\Common\Attr;
 
-class Div extends Element
+class Ul extends Element
 {
     /**
      * Stores attributes of the <ul> tag
@@ -39,6 +39,6 @@ class Div extends Element
      */
     public function render(\Lavary\Menus\Collection $collection)
     {
-        return '<div' . Attr::printAttributes($this->attributes) . '>' . static::populate($collection, 'div', $this->dropdown) . '</div>';
+        return '<ul' . Attr::printAttributes($this->attributes) . '>' . static::populate($collection, 'ul', $this->dropdown) . '</ul>';
     }
 }
