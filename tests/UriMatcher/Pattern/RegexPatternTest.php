@@ -2,7 +2,7 @@
 
 namespace Lavary\Menus\Tests;
 
-use Lavary\Menus\Matcher\Pattern\RegexPattern;
+use Lavary\Menus\UriMatcher\Pattern\RegexPattern;
 use Lavary\Menus\Item;
 
 class RegexPatternTest extends \PHPUnit_Framework_TestCase
@@ -10,7 +10,7 @@ class RegexPatternTest extends \PHPUnit_Framework_TestCase
    /**
     * The pattern instance
     *
-    * @var \Lavary\Menus\Matcher\Pattern\UriPattern
+    * @var \Lavary\Menus\UriMatcher\Pattern\UriPattern
     */
     protected $pattern;
 

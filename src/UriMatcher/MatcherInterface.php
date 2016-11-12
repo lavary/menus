@@ -1,6 +1,6 @@
 <?php
 
-namespace Lavary\Menus\Matcher;
+namespace Lavary\Menus\UriMatcher;
 
 interface MatcherInterface
 {
@@ -11,5 +11,5 @@ interface MatcherInterface
      *
      * @return boolean
      */
-    public function isCurrent(\Lavary\Menus\Item $item);
+    public function isCurrentUri(\Lavary\Menus\Item $item);
 }

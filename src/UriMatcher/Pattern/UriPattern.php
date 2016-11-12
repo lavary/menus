@@ -1,6 +1,6 @@
 <?php
 
-namespace Lavary\Menus\Matcher\Pattern;
+namespace Lavary\Menus\UriMatcher\Pattern;
 
 class UriPattern implements PatternInterface
 {

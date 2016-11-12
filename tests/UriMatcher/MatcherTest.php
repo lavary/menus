@@ -2,9 +2,9 @@
 
 namespace Lavary\Menus\Tests;
 
-use Lavary\Menus\Matcher\Matcher;
-use Lavary\Menus\Matcher\Pattern\PatternInterface;
-use Lavary\Menus\Matcher\Pattern\RegexPattern;
+use Lavary\Menus\UriMatcher\Matcher;
+use Lavary\Menus\UriMatcher\Pattern\PatternInterface;
+use Lavary\Menus\UriMatcher\Pattern\RegexPattern;
 use Lavary\Menus\Item;
 
 class MatcherTest extends \PHPUnit_Framework_TestCase
@@ -12,7 +12,7 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
    /**
     * The matcher instance
     *
-    * @var \Lavary\Menus\Matcher\Matcher
+    * @var \Lavary\Menus\UriMatcher\Matcher
     */
     protected $matcher;
 
@@ -23,7 +23,7 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
 
     public function testAddPattern()
     {
-        $pattern = $this->getMockBuilder('\Lavary\Menus\Matcher\Pattern\PatternInterface')
+        $pattern = $this->getMockBuilder('\Lavary\Menus\UriMatcher\Pattern\PatternInterface')
                         ->getMock();
 
         $this->matcher->addPattern($pattern);
@@ -32,7 +32,7 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
 
         $patterns = $this->matcher->getPatterns();
         $this->assertCount(3, $patterns);
-        $this->assertContainsOnlyInstancesOf('\Lavary\Menus\Matcher\Pattern\PatternInterface', $patterns);
+        $this->assertContainsOnlyInstancesOf('\Lavary\Menus\UriMatcher\Pattern\PatternInterface', $patterns);
     }
 
     public function testAddRegex()
@@ -42,29 +42,29 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
 
         $patterns = $this->matcher->getPatterns();
         $this->assertCount(2, $patterns);
-        $this->assertContainsOnlyInstancesOf('\Lavary\Menus\Matcher\Pattern\RegexPattern', $patterns);
+        $this->assertContainsOnlyInstancesOf('\Lavary\Menus\UriMatcher\Pattern\RegexPattern', $patterns);
     }
 
-    public function testIsCurrentWithoutPatterns()
+    public function testIsCurrentUriWithoutPatterns()
     {
         $item = $this->getMockBuilder('\Lavary\Menus\Item')
                      ->disableOriginalConstructor()
                      ->getMock();
     
-        $this->assertFalse($this->matcher->isCurrent($item));
+        $this->assertFalse($this->matcher->isCurrentUri($item));
         $item->method('isCurrent')->will($this->returnValue(true));
-        $this->assertTrue($this->matcher->isCurrent($item));
+        $this->assertTrue($this->matcher->isCurrentUri($item));
     }
 
-    public function testIsCurrentWithPatternsSuccess()
+    public function testIsCurrentUriWithPatternsSuccess()
     {
         $item = $this->getMockBuilder('\Lavary\Menus\Item')
                      ->disableOriginalConstructor()
                      ->getMock();
         
         $patterns = [
-            $this->getMockBuilder('\Lavary\Menus\Matcher\Pattern\PatternInterface')->getMock(),
-            $this->getMockBuilder('\Lavary\Menus\Matcher\Pattern\PatternInterface')->getMock(),
+            $this->getMockBuilder('\Lavary\Menus\UriMatcher\Pattern\PatternInterface')->getMock(),
+            $this->getMockBuilder('\Lavary\Menus\UriMatcher\Pattern\PatternInterface')->getMock(),
         ];
         
         $patterns[0]->method('match')->will($this->returnValue(true));
@@ -72,7 +72,7 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
         $this->matcher->addPattern($patterns[0])
                       ->addPattern($patterns[1]);
 
-        $this->assertTrue($this->matcher->isCurrent($item));
+        $this->assertTrue($this->matcher->isCurrentUri($item));
     }
 
     public function testIsCurrentWithPatternFail()
@@ -82,13 +82,13 @@ class MatcherTest extends \PHPUnit_Framework_TestCase
                      ->getMock();
         
         $patterns = [
-            $this->getMockBuilder('\Lavary\Menus\Matcher\Pattern\PatternInterface')->getMock(),
-            $this->getMockBuilder('\Lavary\Menus\Matcher\Pattern\PatternInterface')->getMock(),
+            $this->getMockBuilder('\Lavary\Menus\UriMatcher\Pattern\PatternInterface')->getMock(),
+            $this->getMockBuilder('\Lavary\Menus\UriMatcher\Pattern\PatternInterface')->getMock(),
         ];
 
          $this->matcher->addPattern($patterns[0])
                        ->addpattern($patterns[1]);
 
-        $this->assertFalse($this->matcher->isCurrent($item));
+        $this->assertFalse($this->matcher->isCurrentUri($item));
     }
 }

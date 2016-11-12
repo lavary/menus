@@ -117,7 +117,7 @@ class Item implements Attributable
 
         // Activate the item if items's url matches the request uri
         if (true === $this->manager->config('auto_activate')) {
-            if ($this->manager->matcher->isCurrent($this)) {
+            if ($this->manager->matcher->isCurrentUri($this)) {
                 $this->setCurrent(true);
             }
         }

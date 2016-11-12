@@ -4,7 +4,7 @@ namespace Lavary\Menus;
 
 use Lavary\Menus\Common\Arr;
 use Lavary\Menus\Common\Attr;
-use Lavary\Menus\Matcher\MatcherInterface;
+use Lavary\Menus\UriMatcher\MatcherInterface;
 use Lavary\Menus\Configuration\Configuration;
 
 class Manager
@@ -19,7 +19,7 @@ class Manager
     /**
      * Menu matcher
      *
-     * @var Lavary\Menus\Matcher\MatcherInterface
+     * @var Lavary\Menus\UriMatcher\MatcherInterface
      */
     protected $matcher;
 
@@ -51,7 +51,7 @@ class Manager
     /**
      * Sets the matcher object for this menu
      *
-     * @param  \Lavary\Menus\Matcher\Matcher $matcher
+     * @param  \Lavary\Menus\UriMatcher\Matcher $matcher
      *
      * @return void
      */

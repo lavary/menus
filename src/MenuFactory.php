@@ -2,8 +2,8 @@
 
 namespace Lavary\Menus;
 
-use Lavary\Menus\Matcher\Matcher;
-use Lavary\Menus\Matcher\MatcherInterface;
+use Lavary\Menus\UriMatcher\Matcher;
+use Lavary\Menus\UriMatcher\MatcherInterface;
 use Lavary\Menus\Configuration\Configuration;
 
 class MenuFactory
@@ -36,7 +36,7 @@ class MenuFactory
 
         // Matcher wit ha default pattern
         $matcher = new Matcher();
-        $matcher->addPattern(new \Lavary\Menus\Matcher\Pattern\UriPattern($_SERVER['REQUEST_URI']));
+        $matcher->addPattern(new \Lavary\Menus\UriMatcher\Pattern\UriPattern($_SERVER['REQUEST_URI']));
 
         $this->manager = new Manager($configuration, $matcher);
     }
@@ -67,7 +67,7 @@ class MenuFactory
     /**
      * Sets the matcher object for this menu
      *
-     * @param  \Lavary\Menus\Matcher\Matcher $matcher
+     * @param  \Lavary\Menus\UriMatcher\Matcher $matcher
      *
      * @return void
      */
