@@ -12,7 +12,7 @@ A nice Menu builder for PHP +5.4 and 7.
 To install it, use composer:
 
 ```bash
-composer require lavary/menu
+composer require lavary/menus
 ```
 
 You can create a menu by using `make()` method. Here's a basic usage:
@@ -28,7 +28,7 @@ $factory->make('MyNavBar', function($menu) {
   
   $menu->add('Home');
   
-  $menu->add('About', [url => 'about', 'class' => 'foo bar', 'data-role' => 'item'])->data('weight', 15);
+  $menu->add('About', ['url' => 'about', 'class' => 'foo bar', 'data-role' => 'item'])->data('weight', 15);
   $menu->about->add('Goals', 'about/goals');
   
   $menu->add('services', 'services');
@@ -53,4 +53,4 @@ Please submit all issues and questions using GitHub issues and I will try to hel
 
 ## License
 
-*Menu* is free software distributed under the terms of the MIT license.
+*Menus* is free software distributed under the terms of the MIT license.
