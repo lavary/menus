@@ -13,6 +13,14 @@ use Lavary\Menus\Common\Helpers;
 use Lavary\Menus\Traits\Printer;
 use Lavary\Menus\Element\ElementInterface;
 
+/**
+ * Collection for sotring items
+ *
+ * This class has been adapted from illuminate/support package
+ *
+ * @package  illuminate/support
+ * @author   Taylor Otwell <taylorotwell@gmail.com>
+ */
 class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
 {
 

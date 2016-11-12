@@ -2,6 +2,14 @@
 
 namespace Lavary\Menus\Common;
 
+/**
+ * Hepler methods for working with arrays
+ *
+ * This methods have been adapted from illuminate/support package
+ *
+ * @package  illuminate/support
+ * @author   Taylor Otwell <taylorotwell@gmail.com>
+ */
 class Arr
 {
     /**

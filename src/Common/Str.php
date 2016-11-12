@@ -2,6 +2,14 @@
 
 namespace Lavary\Menus\Common;
 
+/**
+ * Hepler methods for working with strings
+ *
+ * This methods have been adapted from illuminate/support package
+ *
+ * @package  illuminate/support
+ * @author   Taylor Otwell <taylorotwell@gmail.com>
+ */
 class Str
 {
      /**
