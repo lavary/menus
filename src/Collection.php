@@ -14,7 +14,7 @@ use Lavary\Menus\Traits\Printer;
 use Lavary\Menus\Element\ElementInterface;
 
 /**
- * Collection for sotring items
+ * Collection for storing the items
  *
  * This class has been adapted from illuminate/support package
  *

@@ -34,7 +34,7 @@ class MenuBuilder
             $configuration = new Configuration();
         }
 
-        // Matcher wit ha default pattern
+        // Matcher with a default pattern
         $matcher = new Matcher();
         $matcher->addPattern(new \Lavary\Menus\UriMatcher\Pattern\UriPattern($_SERVER['REQUEST_URI']));
 
