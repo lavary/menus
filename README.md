@@ -1,6 +1,6 @@
 # Menus
 
-A nice Menu builder for PHP +5.4 and 7.
+A nice Menu builder for PHP 5.4+ and 7.
 
 
 ![Version](http://img.shields.io/packagist/v/lavary/menus.svg?style=flat-square)
