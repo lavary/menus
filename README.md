@@ -22,9 +22,9 @@ You can create a menu by using `make()` method. Here's a basic usage:
 
 use Lavary\Menus\MenuBuilder;
 
-$factory = new MenuBuilder();
+$builder = new MenuBuilder();
 
-$factory->make('MyNavBar', function($menu) {
+$builder->make('MyNavBar', function($menu) {
   
   $menu->add('Home');
   
@@ -36,11 +36,11 @@ $factory->make('MyNavBar', function($menu) {
   
 });
 
-echo $factory->get('myNavBar')->asBootstrap(['navbar-inverse']);
+echo $builder->get('myNavBar')->asBootstrap(['navbar-inverse']);
 
 // or
 
-echo $factory->get('myNavBar')->asUl();
+echo $builder->get('myNavBar')->asUl();
 ```
 
 Please checkout the [documentation](https://github.com/lavary/menus/wiki/Menus) to learn about all the features.
