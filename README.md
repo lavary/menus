@@ -15,7 +15,7 @@ To install it, use composer:
 composer require lavary/menus
 ```
 
-You can create a menu by using `make()` method.
+You can create a menu by calling `make()` method.
 
 Here's a basic usage:
 
